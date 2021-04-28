@@ -4,6 +4,6 @@ class HomeController
 {
     public function index()
     {
-        echo "PAGINA DE INICIO";
+        require_once '../app/Views/home/index.phtml';
     }
 }
