@@ -20,7 +20,7 @@
                     <div class="form-group">
                         <label for="nombre">Nombre:</label>
                         <input type="text" name="nombre" id="nombre" class="form-control"
-                        value="<?=$data?>">
+                        value="<?=$data['nombre']?>">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Enviar</button>
@@ -31,8 +31,8 @@
         <br>
         <div class="row">
             <div class="col-sm-8">
-                Respuesta: Hola <label> <?=$data?> </label>
-                <input type="text" class="form-control" value=" Hola <?=$data?>" isabled>
+                Respuesta: Hola <label> <?=$data['nombre']?> </label>
+                <input type="text" class="form-control" value=" Hola <?=$data['nombre']?>" disabled>
             </div>
         </div>
     </div>
