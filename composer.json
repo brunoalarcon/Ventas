@@ -1,0 +1,20 @@
+{   
+    "name": "ba/baventasmvc",
+    "description": "Software de ventas online",
+    "type": "project",
+    "licence": "proprietary",
+    "authors": [
+        {
+            "name": "BA",
+            "email": "brunoedgarah21@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "Libs\\" : "libs/",
+            "App\\controllers\\": "app/controllers/"
+        }
+    },
+    "require": {}
+}
+

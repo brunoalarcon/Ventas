@@ -1,5 +1,7 @@
 <?php
 
+namespace Libs;
+
 class Core
 {
     public function __construct()
@@ -17,7 +19,7 @@ class Core
         if (empty($url[0])) {
             //Llamamos al controlador predeterminado
             require_once '../App/Controllers/homeController.php';
-            (new HomeController())->index();
+            (new \App\Controllers\HomeController())->index();
             return false;
         }
         
@@ -29,7 +31,7 @@ class Core
         if (file_exists($path_controller)) {
             //Creamos una instancia de dicho controlador
             require_once $path_controller;
-            $controller_name = $url[0]. 'Controller';
+            $controller_name = '\\App\\Controllers\\' .$url[0]. 'Controller';
             $controller = new $controller_name();
             //echo "El controlador {$url[0]} existe";
             

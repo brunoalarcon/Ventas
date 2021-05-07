@@ -1,8 +1,12 @@
 <?php
 
-require_once '../Libs/core.php';
+use Libs\Core;
+
+require_once '../vendor/autoload.php';
+
+//require_once '../Libs/core.php';
 require_once '../Config/config.php';
-require_once '../Libs/controller.php';
+//require_once '../Libs/controller.php';
 
 $core = new Core();
 

@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Controllers;
+
+use Libs\Controller;
+
 class TestController extends Controller
 {
     public function index()
@@ -21,8 +25,8 @@ class TestController extends Controller
 
         $data= [
             'nombre' => $nombre,
-            'dato2' => 'Juaneco',
-            'dato3' => 56
+            //'dato2' => 'Juaneco',
+            //'dato3' => 56
         ];
         
         $this->renderView('test/saludo', $data);
