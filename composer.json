@@ -2,7 +2,7 @@
     "name": "ba/baventasmvc",
     "description": "Software de ventas online",
     "type": "project",
-    "licence": "proprietary",
+    "license": "proprietary",
     "authors": [
         {
             "name": "BA",
@@ -15,6 +15,7 @@
             "App\\controllers\\": "app/controllers/"
         }
     },
-    "require": {}
+    "require": {
+        "league/plates": "^3.4"
+    }
 }
-

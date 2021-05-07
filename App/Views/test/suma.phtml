@@ -18,15 +18,15 @@
                 <form action="<?= URL ?>test/suma" method="POST">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Numero 1</label>
-                        <input type="number" name="num1" class="form-control" value="<?=$data['num1']?>" step="1" id="" required>
+                        <input type="number" name="num1" class="form-control" value="<?= $num1 ?>" step="1" id="" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Numero 2</label>
-                        <input type="number" class="form-control" value="<?=$data['num2']?>" name="num2" id="" step="1" required>
+                        <input type="number" class="form-control" value="<?= $num2 ?>" name="num2" id="" step="1" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Calcular</button>
                     <div class="mb-3 form-check">
-                        <label class="form-check-label" for="exampleCheck1"> <?=$data['rpta']?> </label>
+                        <label class="form-check-label" for="exampleCheck1"> <?=$rpta ?> </label>
                     </div>
                 </form>
             </div>

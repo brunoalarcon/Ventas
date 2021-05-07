@@ -10,6 +10,7 @@ class ComposerStaticInit9a13d1863ca8ae4c3913dfc308755d44
         'L' => 
         array (
             'Libs\\' => 5,
+            'League\\Plates\\' => 14,
         ),
         'A' => 
         array (
@@ -21,6 +22,10 @@ class ComposerStaticInit9a13d1863ca8ae4c3913dfc308755d44
         'Libs\\' => 
         array (
             0 => __DIR__ . '/../..' . '/libs',
+        ),
+        'League\\Plates\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/plates/src',
         ),
         'App\\controllers\\' => 
         array (
