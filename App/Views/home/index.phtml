@@ -10,13 +10,14 @@ $this->layout('../layouts/layout',[
 <?php $this->start('contents')?>
 
 <div class="container">
+    <?php echo env('DB_DATABASE', 'Hola')?>
+
     <h1>BAVentas | Bienvenidos</h1>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt possimus, dolorum, consectetur laborum
         recusandae nesciunt, fuga hic dolore tempore corrupti neque similique amet corporis totam aperiam iusto ut cum
         ex.</p>
-    <?php $this->stop() ?>
 </div>
-
+<?php $this->stop() ?>
 
 <?php $this->push('scripts')?>
 <?php $this->end()?>

@@ -12,7 +12,6 @@ require_once '../Config/config.php';
 $dotenv = Dotenv::createImmutable(__DIR__.'/../');
 $dotenv->load();
 
-//$_ENV['DB_DATABASE'];
 $core = new Core();
 
 //echo "Hola mundo Index ";
