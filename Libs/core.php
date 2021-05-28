@@ -14,7 +14,7 @@ class Core
         $url = explode('/', $url);
 
         //echo "<pre>", print_r($url), "<pre>";
-        myEcho($url);
+        //myEcho($url);
 
         //si el usuario mo proporciona un controlador
         if (empty($url[0])) {

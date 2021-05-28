@@ -11,6 +11,7 @@ class ComposerStaticInit9a13d1863ca8ae4c3913dfc308755d44
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '77775cbbe3631e85926ee42caccb84d8' => __DIR__ . '/../..' . '/app/helpers/helper.php',
+        'a832b5646a87530ec168ae0f456285b6' => __DIR__ . '/../..' . '/config/config.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -40,6 +41,7 @@ class ComposerStaticInit9a13d1863ca8ae4c3913dfc308755d44
         'A' => 
         array (
             'App\\controllers\\' => 16,
+            'App\\Daos\\' => 9,
         ),
     );
 
@@ -79,6 +81,10 @@ class ComposerStaticInit9a13d1863ca8ae4c3913dfc308755d44
         'App\\controllers\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/controllers',
+        ),
+        'App\\Daos\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/daos',
         ),
     );
 

@@ -1,0 +1,19 @@
+<?php
+$this->layout('../layouts/layout',[
+    'title' => 'BAVentas | Categoria'
+]); 
+?>
+
+<?php $this->push('styles')?>
+<?php $this->end()?>
+
+<?php $this->start('contents')?>
+
+<div class="container">
+    <h1>BAVentas - Bienvenidos</h1>
+    <?php myEcho($data) ?>
+</div>
+<?php $this->stop() ?>
+
+<?php $this->push('scripts')?>
+<?php $this->end()?>
