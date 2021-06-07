@@ -10,7 +10,7 @@ class Connection
     private $db;
     private $pdo = null;
 
-    private static $_intance =null;
+    private static $_instance =null;
 
     private function __construct()
     {
@@ -25,10 +25,10 @@ class Connection
 
     public static function getInstance()
     {
-        if (self::$_intance == null) {
-            self::$_intance == new Connection();
+        if (self::$_instance == null) {
+            self::$_instance = new Connection();
         }
-        return self::$_intance;
+        return self::$_instance;
     }
 
     public function connect()
