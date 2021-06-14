@@ -33,7 +33,7 @@ class CategoriaController extends Controller
 
         $obj->categoryid = isset($_POST['categoryid']) ? $_POST['categoryid'] :0;
         $obj->categoryid = isset($_POST['categoryname']) ? $_POST['categoryname'] : "";
-        $obj->description = isset($_POST['description']) ? $_POST['description'] : "";
+        $obj->descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : "";
 
         if (isset($_POST['estado'])) {
             if ($_POST['estado'] == 'on') {
@@ -45,7 +45,7 @@ class CategoriaController extends Controller
             $obj->estado = false;
         }
 
-        if ($obj->idcategoria>0) {
+        if ($obj->categoryid>0) {
             $this->dao->update($obj);
         }else{
             $this->dao->create($obj);
@@ -57,7 +57,13 @@ class CategoriaController extends Controller
     
     public function delete()
     {
-        
+        $id = isset($param[0]) ? $param[0] : 0;
+
+        if ($id > 0) {
+            $this->dao->delete($id);
+        }
+
+        header('Location:' . URL . 'categoria/index');
     }
 
 }
