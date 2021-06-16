@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '6a6618572c81decdaecfcaeaf0fd776fa9215d9f',
+    'reference' => '851bd24e817e571e80fa94d2a520e275b88106f5',
     'name' => 'ba/baventasmvc',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '6a6618572c81decdaecfcaeaf0fd776fa9215d9f',
+      'reference' => '851bd24e817e571e80fa94d2a520e275b88106f5',
     ),
     'doctrine/inflector' => 
     array (
@@ -584,6 +584,15 @@
       array (
       ),
       'reference' => '6964c76c7804814a842473e0c8fd15bab0f18e25',
+    ),
+    'wixel/gump' => 
+    array (
+      'pretty_version' => 'v1.12.1',
+      'version' => '1.12.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e8416a3942f8e868c930e3577e12ba23ef02e8fe',
     ),
   ),
 );

@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
+
 use App\Daos\CategoriaDAO;
+use GUMP;
 use Libs\Controller;
 use stdClass;
 
@@ -29,29 +31,55 @@ class CategoriaController extends Controller
 
     public function save()
     {
-        $obj = new stdClass();
+        $valid_data = $this->valida($_POST);
 
-        $obj->categoryid = isset($_POST['categoryid']) ? $_POST['categoryid'] :0;
-        $obj->categoryid = isset($_POST['categoryname']) ? $_POST['categoryname'] : "";
-        $obj->descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : "";
+        $status = $valid_data['status'];
+        $data = $valid_data['data'];
 
-        if (isset($_POST['estado'])) {
-            if ($_POST['estado'] == 'on') {
-                $obj->estado = true;
-            } else {
+        if ($status==true) {
+            $obj = new stdClass();
+            $obj->categoryid = isset($_POST['categoryid']) ? $_POST['categoryid'] :0;
+            $obj->categoryid = isset($_POST['categoryname']) ? $_POST['categoryname'] : "";
+            $obj->descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : "";
+
+             if (isset($_POST['estado'])) {
+                if ($_POST['estado'] == 'on') {
+                    $obj->estado = true;
+                } else {
                 $obj->estado = false;
             }
-        } else {
-            $obj->estado = false;
-        }
+            } else {
+                $obj->estado = false;
+             }
 
-        if ($obj->categoryid>0) {
-            $this->dao->update($obj);
+            if ($obj->categoryid>0) {
+                $rpta = $this->dao->update($obj);
+            }else{
+                $rpta = $this->dao->create($obj);
+            }
+
+            if ($rpta) {
+                $response = [
+                    'success' => 1,
+                    'message' =>'Categoria guardada correctamente',
+                    'redirection' => URL .'categoria/index'
+                ];
+            }else{
+                $response = [
+                    'success' => 0,
+                    'message' =>'Error al guardar los datos',
+                    'redirection' => ' '
+                ];
+            }
         }else{
-            $this->dao->create($obj);
+            $response = [
+                'success' => -1,
+                'message' =>$data,
+                'redirection' => ''
+            ];
         }
-
-        header('Location:' .  URL . 'categoria/index' );
+        return $response;       
+        // header('Location:' .  URL . 'categoria/index' );
 
     }
     
@@ -64,6 +92,26 @@ class CategoriaController extends Controller
         }
 
         header('Location:' . URL . 'categoria/index');
+    }
+
+    public function valida($datos)
+    {
+        $gump = new GUMP('es');
+
+        $gump->validation_rules([
+            'nombre' => 'required|max_len,10',
+            'descripcion' => 'min_len,5|max_len,10'
+        ]);
+
+        $valid_data = $gump->run($datos);
+        if ($gump->errors()) {
+            $response = [
+                'status' => false,
+                'data' => $gump->get_errors_array()
+            ];
+        }
+
+        return $response;
     }
 
 }

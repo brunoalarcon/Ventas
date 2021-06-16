@@ -1,17 +1,7 @@
-<?php
-$this->layout('../layouts/layout',[
-    'title' => 'BAVentas | Categoria | Detalle'
-]); 
-?>
-
-<?php $this->push('styles')?>
-<?php $this->end()?>
-
 <?php $this->start('contents')?>
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h1>Categorias - Detalles</h1>
             <form action="<?= URL .'categoryid/save' ?>" method="post">
                 <input type="text" name="categoryid" value="<?= $data->categoryid ?>">
                 <div class="row">
@@ -38,7 +28,7 @@ $this->layout('../layouts/layout',[
                         </div>
                     </div>
                     <div class="col-sm-8">
-
+                        <div id="mis_errores"></div>
                     </div>
                 </div>
                 <br>

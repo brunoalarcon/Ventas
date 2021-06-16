@@ -13,7 +13,7 @@ $this->layout('../layouts/layout',[
     <h1>Bienvenidos</h1>    
     <div class="row">
         <div class="col-sm-4">
-            <a href="<?= URL . 'categoria/detail'?>" class="btn btn-primary btn-block">Nuevo</a>
+            <a is-modal="true" href="<?= URL . 'categoria/detail'?>" class="btn btn-primary btn-block">Nuevo</a>
         </div>
     </div>
     <br>    
@@ -35,8 +35,8 @@ $this->layout('../layouts/layout',[
                             <td><?= $row->categoryname ?></td>
                             <td><?= $row->descripcion ?></td>
                             <td>
-                                <a href="<?= URL . "categoria/detail/{$row->categoryid}" ?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></a>
-                                <a href="<?= URL . "categoria/delete/{$row->categoryid}" ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                <a is-modal="true" href="<?= URL . "categoria/detail/{$row->categoryid}" ?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></a>
+                                <a is-modal="true" href="<?= URL . "categoria/delete/{$row->categoryid}" ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -47,8 +47,20 @@ $this->layout('../layouts/layout',[
     <br>    
 </div>
 
+<?php $this->stop() ?>
 
+<?php $this->start('myModal')?>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalGenerico">
+  Launch demo modal
+</button>
+
+<?php
+$title = 'Categoria Detalle -Insertar';
+$size = NORMAL;
+include MAINPATH . 'app/views/layouts/partials/_modalGenerico.phtml'
+?>
 <?php $this->stop() ?>
 
 <?php $this->push('scripts')?>
+<script src="<?=URL.'js/scripts/modal_crud.js' ?>"></script>
 <?php $this->end()?>
